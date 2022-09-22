@@ -14,3 +14,13 @@ export const RemoveEmptyValueFromArray = (param) => {
     return arr;
   }
 }
+
+export const binToHex = (str) => {
+    let decimal = parseInt(str, 2);
+    return decimal.toString(16);
+}
+
+export const hexToBin = (str) => {
+    let decimal = parseInt(str,16);
+    return decimal.toString(2)
+}
