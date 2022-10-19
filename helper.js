@@ -84,3 +84,25 @@ export const hexToBin = (str) => {
 
     return { utcDate }
   }
+  
+  export const currencyFormatter = (amount, currency=null, country=null) => {	
+  
+  if(!amount){
+    throw new Error("amount is missing");
+  }
+  
+  if(!currency){
+    if(!country){
+      return "pass country or currency in the function";
+    } else{
+      // convert country into the currency
+      currency = "USD";
+    }
+  }
+  
+  
+  const option = { style: 'currency', currency };
+  
+  const currencyFormat = new Intl.NumberFormat("en-US", option).format(amount);
+  return currencyFormat;
+}
